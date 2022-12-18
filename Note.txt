@@ -3,5 +3,22 @@ Why you shouldn't use a div for everything (https://www.youtube.com/watch?v=YAqR
 https://codepen.io/kevinpowell/pen/BaVdrLm
 https://github.com/Annie-Huang/hamburger-menu
 
------------------------------------------------------------
+https://www.accede-web.com/en/guidelines/rich-interface-components/hamburger-menu/
+https://www.smashingmagazine.com/2017/11/building-accessible-menu-systems/#navigation-menu-buttons
+https://a11y-style-guide.com/style-guide/section-navigation.html#kssref-navigation-navigation-mobile
 
+-----------------------------------------------------------
+Use div to mimic the button disadvantage:
+- I can't actually focus on my button if i want to keyboard navigate
+    you will need to add tab-index = 0, e.g. <div tabindex='0' class='menu-toggle'>...</div>
+
+- Browser and assistive technologies don't really see this as an actual button
+    Need to add role as button. e.g.  <div tabindex='0' role='button' class='menu-toggle'>...</div>
+
+- Buttons need to be able to be interacted by clicking on them but also by being able to use your spacebar or by using the enter key
+    Need to add javascript to handle those.
+
+
+Better to put the button inside a <nav>, people who is using assistive technologies, they can actually skip straight to the nav.
+This is a landmark region that is very easy to access with assistive technologies. so if they navigate straight to here and the first thing
+in there is teh button and they can interact with that and actually open the navigation right away.
