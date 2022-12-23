@@ -57,7 +57,7 @@ header::after {
   animation: clipPathCircleClose 750ms ease-in-out forwards;
 }
 .primary-navigation[data-state='closed'] {
-  display: none;
+  display: none; /* this is important, it make sure when the menu is close, it's not tabbable into the menu list */
 }
 
 @keyframes clipPathCircleOpen {

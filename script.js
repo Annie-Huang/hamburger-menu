@@ -3,7 +3,7 @@ const siteNavigation = document.querySelector('.primary-navigation');
 
 menuToggle.addEventListener('click', () => {
   const isOpened = menuToggle.getAttribute('aria-expanded') === 'true';
-  if (isOpened ? closeMenu() : openMenu());
+  isOpened ? closeMenu() : openMenu();
 });
 
 function openMenu() {
